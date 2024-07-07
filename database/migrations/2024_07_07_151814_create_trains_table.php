@@ -16,12 +16,11 @@ return new class extends Migration
             $table->string('Azienda');
             $table->string('Stazione_di_partenza');
             $table->string('Stazione_di_arrivo');
-            $table->timestamp('Orario_di_partenza');
-            $table->timestamp('Orario_di_arrivo');
+            $table->timestamp('Orario_di_partenza')->useCurrent();
+            $table->timestamp('Orario_di_arrivo')->useCurrent();
             $table->integer('codice_treno');
             $table->integer('numero_carrozze');
             $table->boolean('in_orario')->default(true);
-            $table->boolean('cancellato');
             
             $table->timestamps();
         });
